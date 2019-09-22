@@ -1,0 +1,24 @@
+version: '3'
+
+volumes:
+  mysql-data:
+
+services:
+  php:
+    build: ./docker/php
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+    volumes:
+      - .:/app
+    ports:
+      - 6060:8080
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD-beejee}
+      MYSQL_DATABASE: ${DB_DATABASE-beejee}
+    volumes:
+      - .:/app
+      - mysql-data:/var/lib/mysql
+

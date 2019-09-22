@@ -1,0 +1,26 @@
+{
+    "name": "beejee/test-app",
+    "description": "BeeJeeTestProject",
+    "type": "project",
+    "version": "1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Asanov Ruslan",
+            "email": "bioforge91@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BeeJee\\App\\": "src/"
+        }
+    },
+    "require": {
+        "league/route": "^4.3",
+        "zendframework/zend-diactoros": "^2.1",
+        "zendframework/zend-httphandlerrunner": "^1.1",
+        "league/container": "^3.3",
+        "ext-pdo": "*",
+        "delight-im/auth": "^8.1"
+    }
+}
