@@ -17,10 +17,6 @@ return function (Router $router, Psr\Container\ContainerInterface $container) {
 
     $router->get('/task/{id:number}', Controllers\Task\View::class);
 
-    $router->get('/task/{id:number}/create', Controllers\Task\Form::class)->middleware(
-        $container->get(AuthMiddleware::class)
-    );
-
     $router->get('/task/{id:number}/edit', Controllers\Task\Form::class)->middleware(
         $container->get(AuthMiddleware::class)
     );
